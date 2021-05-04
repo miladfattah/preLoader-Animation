@@ -1,0 +1,95 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hachi Maru Pop', cursive;
+    color: #000;
+}
+
+.preload {
+    background: linear-gradient(rgb(39, 171, 204), rgb(4, 74, 87));
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preload h2{
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: white;
+}
+
+.preload-finish{
+    opacity: 0;
+    pointer-events: 0;
+}
+
+.airplan{
+    width: 150px;
+    animation: airplanMove 1s ease infinite alternate;
+}
+
+.preload img:not(img[class="airplan"]) {
+    width: 100px;
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    z-index: -1;
+    opacity: .8;
+}
+
+.cloud1{
+    top: 25%;
+    transform: translateY(-25%);
+    animation: cloudMove 3s linear infinite;
+
+}
+.cloud2{
+    top: 50%;
+    transform: translateY(-50%);
+    animation: cloudMove 3s linear infinite 1s;
+
+}
+.cloud3{
+    top: 75%;
+    transform: translateY(-75%);
+    animation: cloudMove 3s linear infinite 1.3s;
+
+}
+
+@keyframes airplanMove {
+    from {
+        transform :translateY(-80px)
+    }
+    to{
+        transform :translateY(80px)
+    }
+}
+@keyframes cloudMove {
+    from {
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(-120vw);
+    }
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
